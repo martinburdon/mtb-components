@@ -17,7 +17,8 @@ export const ToggleSwitch: FC<ToggleSwitchType> = ({
   onChange
 }) => {
   return (
-    <Container disabled={disabled}>
+    // TODO: Pass `disabled` class to `Container`
+    <Container>
       <input
         type='checkbox'
         id={id}
