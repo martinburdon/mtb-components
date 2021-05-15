@@ -4,5 +4,6 @@ import {
   CollapsibleBody,
   CollapsibleHead
 } from './components/Collapsible';
+import { ToggleSwitch } from './components/ToggleSwitch';
 
-export { Collapsible, CollapsibleBody, CollapsibleHead, Example };
+export { Collapsible, CollapsibleBody, CollapsibleHead, Example, ToggleSwitch };
