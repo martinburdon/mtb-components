@@ -31,5 +31,8 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "prism-react-renderer": "^1.2.0"
+  }
 }
