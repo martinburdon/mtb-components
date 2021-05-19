@@ -1,15 +1,18 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import {
   Example,
   Collapsible,
   CollapsibleHead,
   CollapsibleBody,
   ToggleSwitch,
-  CodeBlock
+  CodeBlock,
+  Modal
 } from './component-lib';
 
 function App() {
   const [toggleChecked, setToggleChecked] = useState(false);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const inputRef = useRef(null);
 
   const cssCode = `
     .sticky-el {
@@ -32,8 +35,19 @@ function App() {
     observer.observe(el);
   `;
 
+  const modalProps = {
+    isOpen: modalOpen,
+    onRequestClose: () => setModalOpen(false),
+    elementToFocusOnOpen: inputRef
+  };
+
   return (
     <div className='App'>
+      <button onClick={() => setModalOpen(true)}>Open modal</button>
+      <Modal {...modalProps}>
+        Some modal content <input ref={inputRef} />
+        <button onClick={() => setModalOpen(false)}>Custom close</button>
+      </Modal>
       <CodeBlock language='jsx'>{jsCode}</CodeBlock>
       <CodeBlock language='css'>{cssCode}</CodeBlock>
       <Example text='Hello custom text' />

@@ -6,6 +6,7 @@ import {
 } from './components/Collapsible';
 import { ToggleSwitch } from './components/ToggleSwitch';
 import { CodeBlock } from './components/CodeBlock';
+import { Modal, setAppElement } from './components/Modal';
 
 export {
   Collapsible,
@@ -13,5 +14,7 @@ export {
   CollapsibleHead,
   Example,
   ToggleSwitch,
-  CodeBlock
+  CodeBlock,
+  Modal,
+  setAppElement
 };
